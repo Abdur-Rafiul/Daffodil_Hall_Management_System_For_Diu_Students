@@ -25,7 +25,13 @@ class CustomAuthController extends Controller
         $request->validate([
             'StudentID' => 'required',
             'password' => 'required',
-        ]);
+        ],
+        [
+            'StudentID.required'=>'Student ID Must Be Filled Up.',
+            'password.required'=>'Password Must Be Filled Up.'
+
+        ]
+        );
 
         //$msg = array('msg' => 'Current password is incorrect');
 
@@ -36,12 +42,12 @@ class CustomAuthController extends Controller
             $request->session()->put('user','StudentID');
 
           return redirect()->intended('/')
-                      ->withSuccess('Signed in');
+                      ->with('Signed in');
 //            return Redirect::back('/')
 //                ->withErrors($msg);
         }
 
-        return redirect("login")->withSuccess('Login details are not valid');
+        return redirect("login")->with('success','Login details are not valid');
     }
 
     public function registration()
