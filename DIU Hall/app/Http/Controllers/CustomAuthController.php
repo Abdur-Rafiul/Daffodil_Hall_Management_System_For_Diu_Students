@@ -57,26 +57,37 @@ class CustomAuthController extends Controller
 
     public function customRegistration(Request $request)
     {
-        $StudentID1 = $request->input('StudentID');
-
-        $countValue1=manyStudentModel::where('student_id','=',$StudentID1)->count();
-       if($countValue1 == 1){
-
 
         $request->validate([
             'name' => 'required',
             'StudentID' => 'required|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
+        ],[
+            'name.required'=>'Student name Must Be Filled Up.',
+            'StudentID.required'=>'StudentID Must Be Filled Up.',
+            'email.required'=>'email Must Be Filled Up.',
+            'email.unique'=>'Email has been Already Taken.',
+            'password.required'=>'password Must Be Filled Up.',
+            'password.min'=>'The password must be at least 6 characters.',
+
         ]);
+
+        $StudentID1 = $request->input('StudentID');
+
+        $countValue1=manyStudentModel::where('student_id','=',$StudentID1)->count();
+       // dd($countValue1);
+       if($countValue1 == 1){
+
+
 
         $data = $request->all();
         $check = $this->create($data);
        // $request->session()->flush();
-        return redirect("login")->withSuccess('You have signed-in');
+        return redirect("login")->with('failed','Registration Successfully');
     }else{
 
-           return redirect("registration")->withSuccess('Please Real Student ID');
+           return redirect("registration")->with('success','Please Real Student ID');
        }
     }
     public function create(array $data)
@@ -154,7 +165,13 @@ class CustomAuthController extends Controller
     {
         $request->validate([
             'email' => 'required|email|exists:users',
-        ]);
+        ],
+        [
+            'email.required'=>'Please Enter Your Valid Email Address',
+            'email.exists'=>'Your Email is invalid'
+        ]
+
+        );
 
         $token = Str::random(64);
 
@@ -168,7 +185,7 @@ class CustomAuthController extends Controller
             $message->subject('Reset Password Notification');
         });
 
-        return back()->with('message', 'We have e-mailed your password reset link!');
+        return redirect('reset')->with('message', 'We have e-mailed your password reset link!');
     }
 
 

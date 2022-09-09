@@ -31,7 +31,7 @@ class floorControllerForAdmin extends Controller
         $photoName=(explode('/',$path))[1];
 
         $host=$_SERVER['HTTP_HOST'];
-        $location="http://".$host."/storage/".$photoName;
+        $location=" http://".$host."/storage/".$photoName;
 
         $result= FloorModel::insert([
             'floor_name'=>$FloorName,

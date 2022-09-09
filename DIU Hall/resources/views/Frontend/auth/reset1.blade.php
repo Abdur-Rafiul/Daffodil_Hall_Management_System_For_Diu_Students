@@ -6,9 +6,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header">Reset Password</div>
                 <div class="card-body">
+
+                    @if(session('reset1'))
+                        <div class="alert alert-danger">
+                            {{session('reset1')}}
+                        </div>
+                    @endif
+
                     <form method="POST" action="{{ route('reset.password.post') }}">
                         @csrf
                         <input type="hidden" name="token" value="{{ $token }}">
@@ -42,12 +49,12 @@
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control mb-2" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 mb-2">
                                 <button type="submit" class="btn btn-primary">
                                     Reset Password
                                 </button>

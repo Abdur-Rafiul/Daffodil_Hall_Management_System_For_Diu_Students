@@ -11,7 +11,7 @@ class SingleStudentController extends Controller
       'unit_name' => $unitName,'student_id' => $studentid])->get();
 
       // return $singlestudent;
-
+     // dd($singlestudent);
       return view('Frontend.SingleStudent',['singlestudent'=>$singlestudent]);
    }
 }
