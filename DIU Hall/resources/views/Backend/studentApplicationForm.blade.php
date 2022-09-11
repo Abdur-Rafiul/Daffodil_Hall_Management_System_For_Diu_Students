@@ -1,7 +1,7 @@
 
-<div class="bg-light stdForm">
-@extends('backend.Layout.app2')
-
+<div class="stdForm">
+{{--@extends('backend.Layout.app2')--}}
+    @extends('Backend.Layout.suppored')
 @section('content')
 
 

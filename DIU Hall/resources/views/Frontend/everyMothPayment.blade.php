@@ -5,6 +5,11 @@
     <h1 class="text-center">Payment</h1>
     <div class="row">
         <div class="col-md-4">
+            @if(session('fa'))
+                <div class="alert alert-danger">
+                    {{session('fa')}}
+                </div>
+            @endif
             <h5>Please Select Your ID</h5>
             <input class="w-100 p-3 mb-2" id="studentid" type="text" style="border:2px solid green;" placeholder="Enter Your University ID">
             <h5>Please Select This Month</h5>
@@ -25,7 +30,7 @@
         </div>
         <div class="col-md-8" >
             <div class="col-md-12 text-center mt-5 mb-3">
-                <h6>If you want to live in Rahat Villa, you must pay the monthly rent from here</h6>
+                <h6>If you want to live in DIU Hall, you must pay the monthly rent from here</h6>
             </div>
             <div class="row">
             <div class="col-md-4"></div>

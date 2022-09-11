@@ -41,8 +41,7 @@
 
 <script type="text/javascript" src="{{asset('Frontend/js/mdb.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('Frontend/js/jquery-3.5.1.js')}}"></script>
-<script type="text/javascript" src="{{asset('Frontend/js/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Frontend/js/jquery.slimscroll.js')}}">
+
 <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css')}}">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
     <script src="{{asset('Frontend/js/axios.min.js')}}"></script>

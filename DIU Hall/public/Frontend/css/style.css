@@ -19,6 +19,7 @@ ul li a{
     box-sizing: border-box!important;
     overflow: hidden!important;
     height: 100%!important;
+    width: 100%!important;
 }
 .scroll{
     overflow: scroll!important;

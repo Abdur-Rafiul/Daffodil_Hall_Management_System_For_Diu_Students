@@ -34,7 +34,7 @@ class HomeController extends Controller
             if($count == 1){
                 return view('Frontend.singleViewStudent',['student'=>$studentDetails]);
             }else{
-                return view('Frontend.error');
+                return redirect('/')->with('fa','Student ID Not Found');
             }
 
         }

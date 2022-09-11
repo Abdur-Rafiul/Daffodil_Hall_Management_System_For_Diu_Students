@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
-use App\Models\FloorModel; 
-use App\Models\unitModel; 
-use App\Models\StudentApplicationMode; 
+use App\Models\FloorModel;
+use App\Models\unitModel;
+use App\Models\StudentApplicationMode;
 
 class StudentApplicationController extends Controller
 {
@@ -16,14 +16,13 @@ class StudentApplicationController extends Controller
 
       return view('Frontend.StudentApplication',['floorName'=>$floorName,'unitName'=>$unitName]);
 
-    
+
      }
 
 
-   
+
     function submit(Request $req){
 
-        
         $stdId  = $req->input('stdId');
         $stdName = $req->input('stdName');
         $FName = $req->input('FName');
@@ -41,14 +40,14 @@ class StudentApplicationController extends Controller
         $stdDob = $req->input('stdDob');
         $permanentDes = $req->input('permanentDes');
         $presentDes = $req->input('presentDes');
-    
-        
+
+
         $path= $req->file('FileKey')->store('images');
 
         $result= StudentApplicationMode::insert([
         'student_id'=>$stdId,
         'student_name'=>$stdName,
-        'student_fatherName'=>$FName, 
+        'student_fatherName'=>$FName,
         'student_fatherContact'=>$FContact,
         'student_motherName'=>$MName,
         'student_motherContact'=>$MContact,
@@ -73,13 +72,13 @@ class StudentApplicationController extends Controller
 
 
         if($result==true){
-            
+
             return 1;
         }
         else {
             return 0;
         }
-    
+
 }
-    
+
 }

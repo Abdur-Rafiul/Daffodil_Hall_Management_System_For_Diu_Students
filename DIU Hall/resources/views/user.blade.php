@@ -34,8 +34,15 @@
 
 
                     <div class="">
+{{--                        <img src="'/Frontend/images/Owner.jpg" alt="">--}}
 
-{{--                        <img class="cvimg1" src="{{$singlestudent['student_img']}}" />--}}
+{{--                        <img src="{{ public_path() . $img }}">--}}
+
+{{--                        <img src="{{('http://127.0.0.1:8000/storage/Ii0uiUTGMAWBMcv0jRk6q8vX9JeT22j9TzBDLe6S.jpg') }}" style="width: 200px; height: 200px">--}}
+
+
+{{--                      <img class="cvimg1" src="{{ public_path('storage/public/Ii0uiUTGMAWBMcv0jRk6q8vX9JeT22j9TzBDLe6S.jpg') }}" />--}}
+{{--                      <img class="cvimg1" src='{{ public_path("{$singlestudent['student_img']}") }}' />--}}
 
                     </div>
 

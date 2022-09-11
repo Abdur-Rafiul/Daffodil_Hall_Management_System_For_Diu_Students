@@ -64,18 +64,18 @@ Route::post('/UnitDelete',[unitAdminController::class,'UnitDelete'])->middleware
 
 
 
-Route::get('/studentApplication',[StudentApplicationAdminController::class,'studentApplication'])->middleware('LoginCheckAdmin');;;
-Route::get('/studentApplicationForm',[StudentApplicationAdminController::class,'studentApplicationForm'])->middleware('LoginCheckAdmin');;;
-Route::post('/submitFromAdmin',[StudentApplicationAdminController::class,'submitFromAdmin'])->middleware('LoginCheckAdmin');;;
+Route::get('/studentApplication',[StudentApplicationAdminController::class,'studentApplication']);;
+Route::get('/studentApplicationForm',[StudentApplicationAdminController::class,'studentApplicationForm']);
+Route::post('/submitFromAdmin',[StudentApplicationAdminController::class,'submitFromAdmin']);;;
 Route::post('/submitFromAdmin1',[StudentApplicationAdminController::class,'submitFromAdmin1']);
 Route::post('/floorToUnit',[StudentApplicationAdminController::class,'floorToUnit']);
-Route::get('/submitedData',[StudentApplicationAdminController::class,'submitedData'])->middleware('LoginCheckAdmin');;;
+Route::get('/submitedData',[StudentApplicationAdminController::class,'submitedData']);
 Route::post('/StudentEditAdmin',[StudentApplicationAdminController::class,'StudentEditAdmin'])->middleware('LoginCheckAdmin');;;
 Route::post('/submit',[StudentApplicationAdminController::class,'submit'])->middleware('LoginCheckAdmin');;;
 Route::post('/submit1',[StudentApplicationAdminController::class,'submit1'])->middleware('LoginCheckAdmin');;;
 Route::post('/submitDelete',[StudentApplicationAdminController::class,'submitDelete'])->middleware('LoginCheckAdmin');;;
-Route::post('/paymentMethod',[StudentApplicationAdminController::class,'paymentMethod'])->middleware('LoginCheckAdmin');;;
-Route::get('/paymentAdminControl',[StudentApplicationAdminController::class,'paymentAdminControl'])->middleware('LoginCheckAdmin');;;
+Route::post('/paymentMethod',[StudentApplicationAdminController::class,'paymentMethod'])->middleware('LoginCheck');;
+Route::get('/paymentAdminControl',[StudentApplicationAdminController::class,'paymentAdminControl']);
 Route::get('/getStudentDataPaymentClear',[StudentApplicationAdminController::class,'getStudentDataPaymentClear'])->middleware('LoginCheckAdmin');;;
 
 

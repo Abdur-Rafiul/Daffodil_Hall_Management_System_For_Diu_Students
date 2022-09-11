@@ -25,12 +25,12 @@
 
 
 
-    <div class="row main">
-        <div class="col-lg-3 col-md-12 col-sm-12 menuStyle">@include('Backend.Layout.Menu')</div>
+    <div class="row">
+        <div class="col-lg-3 col-lg- col-md-12 col-sm-12">@include('Backend.Layout.Menu')</div>
         <div class="col-md-12 scroll">
           <div class="row">
               <div class="col-md-3"></div>
-              <div class="col-md-9"> @yield('content')</div>
+              <div class="col-md-12 col-sm-12 col-lg-9"> @yield('content')</div>
           </div>
 
 
@@ -44,14 +44,9 @@
 <script type="text/javascript" src="{{asset('Frontend/js/mdb.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('Frontend/js/jquery-3.5.1.js')}}"></script>
 <script type="text/javascript" src="{{asset('Frontend/js/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Frontend/js/jquery.slimscroll.js')}}">
-<script type="text/javascript" src="{{asset('Frontend/js/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Frontend/js/bootstrap.js')}}"></script>
+<
 
-<script src="{{asset('Frontend/js/jquery.slimscroll.js')}}"></script>
-<script src="{{asset('Frontend/js/sidebarmenu.js')}}"></script>
-<script src="{{asset('Frontend/js/sticky-kit.min.js')}}"></script>
-<script src="{{asset('Frontend/js/custom.min-2.js')}}"></script>
+
 <script src="{{asset('Frontend/js/datatables.min.js')}}"></script>
 <script src="{{asset('Frontend/js/datatables-select.min.js')}}"></script>
 <script src="{{asset('Frontend/js/custom.js')}}"></script>

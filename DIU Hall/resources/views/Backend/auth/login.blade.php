@@ -1,9 +1,9 @@
-@extends('backend.Layout.app2')
+@extends('backend.Layout.appsupport')
 @section('content')
-<main class="login-form p-5" style="width: 100%">
+<main class="login-form p-5">
     <div class="container-fluid p-lg-5">
         <div class="row d-flex justify-content-center p-lg-5 p-sm-0 p-md-0 ">
-            <div class="col-md-12 col-sm-12 col-lg-12">
+            <div class="col-md-8 col-sm-12 col-lg-6">
                 <div class="card">
                     <h3 class="card-header text-center">Login</h3>
                     <div class="card-body">
@@ -29,7 +29,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="d-grid mx-auto">
+                            <div class="d-grid mx-auto mb-0">
                                 <button type="submit" class="btn btn-primary p-2 btn-block">Signin</button>
                             </div>
                         </form>

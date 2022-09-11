@@ -25,7 +25,7 @@ class SslCommerzPaymentController extends Controller
 
         }else{
 
-            return view('Frontend.error');
+            return redirect('/')->with('fa','Student Data Not Found');
         }
     }
 

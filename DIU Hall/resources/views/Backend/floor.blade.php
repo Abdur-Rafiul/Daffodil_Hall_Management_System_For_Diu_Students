@@ -1,12 +1,12 @@
 
 
-@extends('backend.Layout.app2')
-
+{{--@extends('backend.Layout.app2')--}}
+@extends('Backend.Layout.suppored')
 @section('content')
 
 <div class="container">
 <div class="row">
-<div class="col-md-12 p-5 ">
+<div class="col-md-12 col-sm-12 p-5 ">
   <button id="floorAdd" class="btn btn-danger my-3">Add New Floor</button>
 <table id="dataTable" class="table table-striped table-bordered scroll">
   <thead>

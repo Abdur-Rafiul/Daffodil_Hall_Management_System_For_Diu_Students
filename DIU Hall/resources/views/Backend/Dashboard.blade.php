@@ -1,4 +1,5 @@
-@extends('Backend.Layout.app2')
+{{--@extends('Backend.Layout.app2')--}}
+@extends('Backend.Layout.suppored')
 
 @section('content')
 

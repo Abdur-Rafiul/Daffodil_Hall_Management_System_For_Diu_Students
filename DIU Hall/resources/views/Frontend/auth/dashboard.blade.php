@@ -91,6 +91,11 @@
                     Search
                 </button>
             </form>
+            @if(session('fa'))
+                <div class="alert alert-danger">
+                    {{session('fa')}}
+                </div>
+            @endif
         </div>
 
     </nav>

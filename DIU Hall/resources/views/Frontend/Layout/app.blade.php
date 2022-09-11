@@ -46,8 +46,7 @@ rel="stylesheet"
 
 <script type="text/javascript" src="{{asset('Frontend/js/mdb.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('Frontend/js/jquery-3.5.1.js')}}"></script>
-<script type="text/javascript" src="{{asset('Frontend/js/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('Frontend/js/jquery.slimscroll.js')}}">
+
 
 
 

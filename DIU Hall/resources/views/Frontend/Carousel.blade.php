@@ -3,16 +3,16 @@
 <div class="row">
 
 <div class="col-lg-3 col-md-12 col-sm-12">
-<div class="card rounded-0">
+<div class="card rounded-0" style="border: 2px solid green">
   <div class="bg-image hover-overlay rounded-0" data-mdb-ripple-color="info">
-    <img style="width:100%;height:500px" src="{{asset('Frontend\images\monir.jpg')}}" class="rounded-0" />
+    <img style="width:100%;height:330px; padding: 10px" src="{{asset('Frontend\images\sabur.png')}}" class="rounded-0" />
     <a href="#!">
       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
     </a>
   </div>
   <h4 class="card-header">Dr. Md. Sabur Khan</h4>
-  <h6 class="card-header">Mobile : 01701-729512</h6>
-  <h6 class="card-header">Email : saburkhan2345@Gmail.com</h6>
+  <h6 class="card-header">Chairman of Daffodil International University</h6>
+  <h6 class="card-header"><a href="http://www.sabur.me/">Profile</a> </h6>
 
 
 

@@ -1,11 +1,11 @@
 @extends('Frontend.Layout.appSupported')
 @section('title','Password Reset')
 @section('content')
-    @include('Frontend.auth.dashboard')
+{{--    @include('Frontend.auth.dashboard')--}}
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12 col-lg-12 col-sm-12">
             <div class="card">
                 <div class="card-header">Verify Your Email Address</div>
                 <div class="card-body">
@@ -16,7 +16,7 @@
                     @endif
 
 
-                        <a href="{{ route('reset.password.get', $token) }}">Reset Password</a>
+                        <a  href="{{ route('reset.password.get', $token) }}">Reset Password</a>
                 </div>
             </div>
         </div>
@@ -25,6 +25,6 @@
 
     <div class="fixed-bottom">
 
-        @include('Frontend.Footer')
+{{--        @include('Frontend.Footer')--}}
     </div>
 @endsection

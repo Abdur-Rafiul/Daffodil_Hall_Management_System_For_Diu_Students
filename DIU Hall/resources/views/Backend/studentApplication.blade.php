@@ -1,8 +1,8 @@
-
+@extends('Backend.Layout.suppored')
 <div class="stdForm1">
 
 
-@extends('backend.Layout.app2')
+{{--@extends('backend.Layout.app2')--}}
 
 @section('content')
 
@@ -11,9 +11,9 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12 p-2 ">
+            <div class="col-md-12 col-sm-12">
 
-                <button id="floorAdd" class="btn btn-primary mt-1 addStudent"><a class="text-white" href="{{url('/studentApplicationForm')}}">Add Student</a></button>
+                <button id="floorAdd" class="btn btn-danger mt-1 addStudent mt-4"><a style="list-style-type: none!important;" class="text-white text-decoration-none" href="{{url('/studentApplicationForm')}}">Add Student</a></button>
                 <div class="scroll1">
 
 

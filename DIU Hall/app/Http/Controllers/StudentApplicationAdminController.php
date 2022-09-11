@@ -438,7 +438,7 @@ class StudentApplicationAdminController extends Controller
         $date = $req->input('date');
         $countValue1=manyStudentModel::where('student_id','=',$stdId)->count();
         $student = manyStudentModel::where('student_id','=',$stdId)->get();
-
+       // $req->session()->put('user','$student');
         if($countValue1==1){
             return $student;
         }else{

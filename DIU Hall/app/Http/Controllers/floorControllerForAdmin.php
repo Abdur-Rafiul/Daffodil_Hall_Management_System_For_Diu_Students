@@ -82,10 +82,6 @@ class floorControllerForAdmin extends Controller
         $img = $req->input('img');
         $string =  $img;
         $token = strtok($string, "/");
-
-
-
-
         $token = strtok("/");
         $token = strtok("/");
         $token = strtok("/");

@@ -7,7 +7,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #3b5998;"
-        href="https://www.facebook.com/groups/395049424796165"
+        href="https://www.facebook.com/daffodilvarsity.edu.bd"
         role="button"
         ><i class="fab fa-facebook-f"></i
       ></a>
@@ -52,7 +52,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2022 Daffodil International University
-    <a class="text-white" href="https://www.facebook.com/groups/395049424796165">DIU</a>
+    <a class="text-white" href="https://www.facebook.com/groups/395049424796165"></a>
   </div>
   <!-- Copyright -->
 </footer>

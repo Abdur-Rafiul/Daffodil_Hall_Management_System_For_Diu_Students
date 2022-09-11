@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+
 use Illuminate\Support\Facades\App;
 use PDF;
 use Illuminate\Http\Request;
@@ -15,9 +16,26 @@ class PDFController extends Controller
         try {
             $singlestudent = manyStudentModel::where(['student_id' => $studentid])->first();
 
-            $pdf = PDF::loadView('user',['singlestudent'=>$singlestudent]);
-            //download PDF file with download method
+             $string =  $singlestudent['student_img'];
+            // dd($string);
+             $token = strtok($string, "/");
+             $token = strtok("/");
+             $token = strtok("/");
+             $token = strtok("/");
+             $imgPath = $token;
+             //dd($imgPath);
+
+            $pdf = PDF::setOptions([
+                'isHtml5ParserEnabled' => true,
+                'isRemoteEnabled' => true
+            ])->loadView('user',['singlestudent'=>$singlestudent,'img'=>$imgPath]);
+
             return $pdf->download($studentid.".pdf");
+
+
+//            $pdf = PDF::loadView('user',['singlestudent'=>$singlestudent]);
+//            //download PDF file with download method
+//            return $pdf->download($studentid.".pdf");
             // return $pdf->stream($unitName."-".$studentid.".pdf");
         } catch (\Exception $exception) {
             dd($exception);
