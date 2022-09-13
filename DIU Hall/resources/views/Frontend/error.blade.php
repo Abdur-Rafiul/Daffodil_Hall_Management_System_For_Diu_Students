@@ -1,7 +1,7 @@
 @extends('Frontend.Layout.app')
 @section('content')
-<div class="container">
+    <div class="container">
 
-<img class="w-100" src="/Frontend\images\error1.jpg" alt="">
-</div>
+        <img class="w-100" src="/Frontend\images\error1.jpg" alt="">
+    </div>
 @endsection

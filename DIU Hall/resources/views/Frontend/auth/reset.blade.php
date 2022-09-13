@@ -1,5 +1,5 @@
 @extends('Frontend.Layout.appSupported')
-@section('title','Password Reset')
+@section('title', 'Password Reset')
 @section('content')
     @include('Frontend.auth.dashboard')
     <div class="container">
@@ -8,9 +8,9 @@
                 <div class="card p-5 mt-5">
                     <h4 class="card-header text-center text-primary">Verify Your Email Address</h4>
                     <div class="card-body">
-                        @if(session('message'))
+                        @if (session('message'))
                             <div class="alert alert-danger">
-                                {{session('message')}}
+                                {{ session('message') }}
                             </div>
                         @endif
 
@@ -20,11 +20,12 @@
 
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                 <div class=" ">
-                                    <input id="email" type="email" class="form-control" placeholder="Please Enter Your Email Address" name="email"  autofocus>
+                                    <input id="email" type="email" class="form-control"
+                                        placeholder="Please Enter Your Email Address" name="email" autofocus>
 
 
                                     @error('email')
-                                    <span class="text-danger">{{$message}}</span>
+                                        <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -37,10 +38,10 @@
                                 </div>
                             </div>
                         </form>
-    </div>
-    </div>
-    </div>
-    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="fixed-bottom">

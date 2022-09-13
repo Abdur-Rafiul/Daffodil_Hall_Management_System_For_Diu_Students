@@ -10,11 +10,11 @@
 
     </style>
     <!-- Bootstrap CSS -->
-{{--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"--}}
-{{--        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">--}}
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" --}}
+    {{-- integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
 
-{{--    <link rel="stylesheet" href="Frontend/css/style.css">--}}
-{{--    <link rel="stylesheet" href="Frontend/css/googlefront.css">--}}
+    {{-- <link rel="stylesheet" href="Frontend/css/style.css"> --}}
+    {{-- <link rel="stylesheet" href="Frontend/css/googlefront.css"> --}}
 
 
 
@@ -34,28 +34,29 @@
 
 
                     <div class="">
-{{--                        <img src="'/Frontend/images/Owner.jpg" alt="">--}}
+                        {{-- <img src='{{$pic}}' alt=""/> --}}
+                        {{-- <img src="'/Frontend/images/Owner.jpg" alt=""> --}}
 
-{{--                        <img src="{{ public_path() . $img }}">--}}
+                        {{-- <img src="{{ public_path() . $img }}"> --}}
 
-{{--                        <img src="{{('http://127.0.0.1:8000/storage/Ii0uiUTGMAWBMcv0jRk6q8vX9JeT22j9TzBDLe6S.jpg') }}" style="width: 200px; height: 200px">--}}
+                        {{-- <img src="{{('http://127.0.0.1:8000/storage/Ii0uiUTGMAWBMcv0jRk6q8vX9JeT22j9TzBDLe6S.jpg') }}" style="width: 200px; height: 200px"> --}}
 
 
-{{--                      <img class="cvimg1" src="{{ public_path('storage/public/Ii0uiUTGMAWBMcv0jRk6q8vX9JeT22j9TzBDLe6S.jpg') }}" />--}}
-{{--                      <img class="cvimg1" src='{{ public_path("{$singlestudent['student_img']}") }}' />--}}
+                        {{-- <img class="cvimg1" src="{{ public_path('storage/public/Ii0uiUTGMAWBMcv0jRk6q8vX9JeT22j9TzBDLe6S.jpg') }}" /> --}}
+                        {{-- <img class="cvimg1" src='{{ public_path("{$singlestudent['student_img']}") }}' /> --}}
 
                     </div>
 
 
 
                     <div class="">
-                    <h1 class="mb-5">About Me</h1>
-                        <pre><h6>Name            {{$singlestudent['student_name']}}</h6></pre>
-                        <pre><h6>Profession      {{$singlestudent['profession']}}</h6></pre>
-                        <pre><h6>Age             {{$singlestudent['student_age']}}</h6></pre>
-                        <pre><h6>Email           {{$singlestudent['student_email']}}</h6></pre>
-                        <pre><h6>Phone           {{$singlestudent['student_phone']}}</h6></pre>
-                        <pre><h6>University      {{$singlestudent['student_university']}}</h6></pre>
+                        <h1 class="mb-5">About Me</h1>
+                        <pre><h6>Name            {{ $singlestudent['student_name'] }}</h6></pre>
+                        <pre><h6>Profession      {{ $singlestudent['profession'] }}</h6></pre>
+                        <pre><h6>Age             {{ $singlestudent['student_age'] }}</h6></pre>
+                        <pre><h6>Email           {{ $singlestudent['student_email'] }}</h6></pre>
+                        <pre><h6>Phone           {{ $singlestudent['student_phone'] }}</h6></pre>
+                        <pre><h6>University      {{ $singlestudent['student_university'] }}</h6></pre>
 
                     </div>
 
@@ -63,26 +64,26 @@
 
                     <div class="">
                         <h3 class="">Present Address </h3>
-                        <p>{{$singlestudent['student_presentAddress']}}</p>
+                        <p>{{ $singlestudent['student_presentAddress'] }}</p>
 
                         <h3 class="mb-5">Permanent Address </h3>
-                        <p>{{$singlestudent['student_permanentAddress']}}</p>
-                   <h1 class="mb-5"></h1>
-                    <h1 class="mt-2 mb-5 mt-5">Guardian Info</h1>
+                        <p>{{ $singlestudent['student_permanentAddress'] }}</p>
+                        <h1 class="mb-5"></h1>
+                        <h1 class="mt-2 mb-5 mt-5">Guardian Info</h1>
 
                         <h3 class="">Main Guardian</h3>
-                        <p>Father's Name : {{$singlestudent['student_fatherName']}}</p>
-                        <p>Father's Contact No : {{$singlestudent['student_fatherContact']}}</p>
-                        <p>Mother's Name : {{$singlestudent['student_motherName']}}</p>
-                        <p>Mother's Contact No : {{$singlestudent['student_motherContact']}}</p>
+                        <p>Father's Name : {{ $singlestudent['student_fatherName'] }}</p>
+                        <p>Father's Contact No : {{ $singlestudent['student_fatherContact'] }}</p>
+                        <p>Mother's Name : {{ $singlestudent['student_motherName'] }}</p>
+                        <p>Mother's Contact No : {{ $singlestudent['student_motherContact'] }}</p>
 
 
                         <h3 class="">Local Guardian</h3>
 
-                        <p>Father's Name : {{$singlestudent['student_fatherName']}}</p>
-                        <p>Father's Contact No : {{$singlestudent['student_fatherContact']}}</p>
-                        <p>Mother's Name : {{$singlestudent['student_motherName']}}</p>
-                        <p>Mother's Contact No : {{$singlestudent['student_motherContact']}}</p>
+                        <p>Father's Name : {{ $singlestudent['student_fatherName'] }}</p>
+                        <p>Father's Contact No : {{ $singlestudent['student_fatherContact'] }}</p>
+                        <p>Mother's Name : {{ $singlestudent['student_motherName'] }}</p>
+                        <p>Mother's Contact No : {{ $singlestudent['student_motherContact'] }}</p>
 
                     </div>
 
@@ -96,7 +97,7 @@
 
             </div>
         </div>
-        </div>
+    </div>
 
 
 

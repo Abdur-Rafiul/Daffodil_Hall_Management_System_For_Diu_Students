@@ -1,20 +1,19 @@
-{{--@extends('backend.Layout.app2')--}}
+{{-- @extends('backend.Layout.app2') --}}
 @extends('Backend.Layout.suppored')
 @section('content')
-
     <div class="container">
         <div class="row">
             <div class="col-md-12 p-5">
                 <button id="UnitAdd" class="btn btn-danger my-3">Add New Unit</button>
                 <table id="dataTable" class="table table-striped table-bordered">
                     <thead>
-                    <tr>
-                        <th class="th-sm">Unit Photo</th>
-                        <th class="th-sm">Unit Name</th>
-                        <th class="th-sm">Floor Name</th>
-                        <th class="th-sm">Edit</th>
-                        <th class="th-sm">Delete</th>
-                    </tr>
+                        <tr>
+                            <th class="th-sm">Unit Photo</th>
+                            <th class="th-sm">Unit Name</th>
+                            <th class="th-sm">Floor Name</th>
+                            <th class="th-sm">Edit</th>
+                            <th class="th-sm">Delete</th>
+                        </tr>
                     </thead>
 
                     <tbody class="Unit_table">
@@ -29,9 +28,9 @@
     </div>
 
 
-    {{--    //Unit Add Modal--}}
+    {{-- //Unit Add Modal --}}
     <div class="modal fade" id="addUnitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -44,13 +43,15 @@
                             <div class="col-md-12">
 
                                 <form>
-                                    <input id="UnitImg" type="file" id="" class="form-control mb-3" placeholder="Unit Photo">
-                                    <input id="UnitName" type="text" id="" class="form-control mb-3" placeholder="Unit Name">
+                                    <input id="UnitImg" type="file" id="" class="form-control mb-3"
+                                        placeholder="Unit Photo">
+                                    <input id="UnitName" type="text" id="" class="form-control mb-3"
+                                        placeholder="Unit Name">
                                     <h4 class="text-start">Floor Name</h4>
                                     <select class="w-100 p-2 text-start" name="floor" id="floor">
 
-                                        @foreach($floorName as $floorName1)
-                                            <option data-id="123">{{$floorName1['floor_name']}}</option>
+                                        @foreach ($floorName as $floorName1)
+                                            <option data-id="123">{{ $floorName1['floor_name'] }}</option>
                                         @endforeach
                                     </select>
                                 </form>
@@ -61,15 +62,15 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-primary" data-mdb-dismiss="modal">Cancel</button>
-                    <button  id="UnitAddConfirmBtn" type="button" class="btn  btn-sm  btn-danger">Save</button>
+                    <button id="UnitAddConfirmBtn" type="button" class="btn  btn-sm  btn-danger">Save</button>
                 </div>
             </div>
         </div>
     </div>
-    {{--Unit Add End--}}
-    {{--    Unit Edit--}}
+    {{-- Unit Add End --}}
+    {{-- Unit Edit --}}
     <div class="modal fade" id="EditUnitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -84,12 +85,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <form>
-                                    <input id="UnitEditImg" type="file" id="" class="form-control mb-3" placeholder="Unit Photo">
-                                    <input id="UnitEditName" type="text" id="" class="form-control mb-3" placeholder="Unit Name">
+                                    <input id="UnitEditImg" type="file" id="" class="form-control mb-3"
+                                        placeholder="Unit Photo">
+                                    <input id="UnitEditName" type="text" id="" class="form-control mb-3"
+                                        placeholder="Unit Name">
                                     <h4 class="text-start">Floor Name</h4>
                                     <select class="w-100 p-2" name="floor" id="floor">
-                                        @foreach($floorName as $floorName)
-                                            <option data-id="123">{{$floorName['floor_name']}}</option>
+                                        @foreach ($floorName as $floorName)
+                                            <option data-id="123">{{ $floorName['floor_name'] }}</option>
                                         @endforeach
                                     </select>
                                 </form>
@@ -101,12 +104,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-primary" data-mdb-dismiss="modal">Cancel</button>
-                    <button  id="UnitEditUpdateConfirmBtn" type="button" class="btn  btn-sm  btn-danger">Save</button>
+                    <button id="UnitEditUpdateConfirmBtn" type="button" class="btn  btn-sm  btn-danger">Save</button>
                 </div>
             </div>
         </div>
     </div>
-    {{--    Unit Edit End--}}
+    {{-- Unit Edit End --}}
 
 
     <!-- Unit Delete Modal -->
@@ -121,18 +124,17 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-mdb-dismiss="modal">No</button>
-                    <a href="#" type="button" data-id="" id="UnitDeleteConfirmBtn"  class="btn btn-sm btn-primary">Yes</a>
+                    <a href="#" type="button" data-id="" id="UnitDeleteConfirmBtn"
+                        class="btn btn-sm btn-primary">Yes</a>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
 
 
 @section('script')
     <script type="text/javascript">
-
         getUnitData();
 
 
@@ -157,18 +159,21 @@
                         $.each(dataJSON, function(i, item) {
                             $('<tr>').html(
 
-                                "<td><img style='width: 90px' data-id="+item['id']+" class='imgOnRow' src="+item['unit_img']+"></td>"+
+                                "<td><img style='width: 90px' data-id=" + item['id'] +
+                                " class='imgOnRow' src=" + item['unit_img'] + "></td>" +
                                 "<td>" + dataJSON[i].unit_name + "</td>" +
                                 "<td>" + dataJSON[i].floor_name + "</td>" +
 
-                                "<td><a class='UnitEditBtn' data-id=" + dataJSON[i].id + " ><i class='fas fa-edit'></i></a></td>" +
-                                "<td ><a   class='UnitDeleteBtn' data-img="+dataJSON[i].unit_img +"  data-id=" + dataJSON[i].id + "><i class='fas fa-trash-alt'></i></a></td>"
+                                "<td><a class='UnitEditBtn' data-id=" + dataJSON[i].id +
+                                " ><i class='fas fa-edit'></i></a></td>" +
+                                "<td ><a   class='UnitDeleteBtn' data-img=" + dataJSON[i].unit_img +
+                                "  data-id=" + dataJSON[i].id + "><i class='fas fa-trash-alt'></i></a></td>"
 
 
                             ).appendTo('.Unit_table');
                         });
 
-                        $('.UnitEditBtn').click(function (){
+                        $('.UnitEditBtn').click(function() {
                             var id = $(this).data('id');
 
                             // alert(id);
@@ -180,7 +185,7 @@
                         })
 
 
-                        $('.UnitDeleteBtn').click(function (){
+                        $('.UnitDeleteBtn').click(function() {
 
                             var id = $(this).data('id');
                             var imgLocation = $(this).data('img');
@@ -195,9 +200,11 @@
 
                             $('#deleteUnitModal').modal('show');
                         })
-                        $('#dataTable').DataTable({"order":false});
+                        $('#dataTable').DataTable({
+                            "order": false
+                        });
                         $('.dataTables_length').addClass('bs-select');
-                    }else{
+                    } else {
 
                     }
 
@@ -210,13 +217,13 @@
         }
 
 
-        $('#UnitAdd').click(function (){
+        $('#UnitAdd').click(function() {
 
             $('#addUnitModal').modal('show');
 
         })
 
-        $('#UnitAddConfirmBtn').click(function (){
+        $('#UnitAddConfirmBtn').click(function() {
 
 
 
@@ -235,19 +242,18 @@
                 //toastr.error('Unit Name is Empty !');
                 alert("Unit Name is Empty !")
 
-            }
-            else {
-                axios.post('/UnitAdd',MyFormData)
+            } else {
+                axios.post('/UnitAdd', MyFormData)
 
 
                     .then(function(response) {
                         if (response.status == 200) {
-                            if(response.data == 1){
-                              alert('Unit Data is Successfully Added')
+                            if (response.data == 1) {
+                                alert('Unit Data is Successfully Added')
                                 getUnitData();
 
                                 $('#addUnitModal').modal('hide');
-                            }else{
+                            } else {
                                 alert('Unit Data is Failed')
                                 getUnitData();
 
@@ -262,11 +268,11 @@
                             $('#addUnitModal').modal('hide');
                         }
                     }).catch(function(error) {
-                    alert('Unit Data Not Response')
-                    getUnitData();
+                        alert('Unit Data Not Response')
+                        getUnitData();
 
-                    $('#addUnitModal').modal('hide');
-                })
+                        $('#addUnitModal').modal('hide');
+                    })
             }
 
         })
@@ -279,8 +285,8 @@
         function getEditUnitId(EditID) {
 
             axios.post('/UnitEdit', {
-                id: EditID
-            })
+                    id: EditID
+                })
                 .then(function(response) {
 
 
@@ -290,7 +296,7 @@
                         var jsonData = response.data;
 
                         $('#UnitEditName').val(jsonData[0].unit_name);
-                       // $('#UnitEditFloorName').val(jsonData[0].floor_name);
+                        // $('#UnitEditFloorName').val(jsonData[0].floor_name);
 
 
 
@@ -309,7 +315,7 @@
         }
 
 
-        $('#UnitEditUpdateConfirmBtn').click(function (){
+        $('#UnitEditUpdateConfirmBtn').click(function() {
             var UnitName = $('#UnitEditName').val();
             var UnitEditFloorName = $("#floor option:selected").text();
 
@@ -323,23 +329,22 @@
 
             if (UnitName.length == 0) {
 
-               alert('Unit Name is Empty !');
+                alert('Unit Name is Empty !');
 
-            }
-            else {
+            } else {
 
 
-                axios.post('/UnitEditUpdateConfirmBtn',MyFormData)
+                axios.post('/UnitEditUpdateConfirmBtn', MyFormData)
 
 
                     .then(function(response) {
                         if (response.status == 200) {
 
-                            if(response.data == 1){
+                            if (response.data == 1) {
                                 alert('Unit Data Successfully Updated.')
                                 getUnitData();
                                 $('#EditUnitModal').modal('hide');
-                            }else{
+                            } else {
                                 alert('Unit Data Update Failed.')
                                 getUnitData();
                                 $('#EditUnitModal').modal('hide');
@@ -352,23 +357,23 @@
                             $('#EditUnitModal').modal('hide');
                         }
                     }).catch(function(error) {
-                    alert('Unit Data Update Failed.')
-                    getUnitData();
-                    $('#EditUnitModal').modal('hide');
-                })
+                        alert('Unit Data Update Failed.')
+                        getUnitData();
+                        $('#EditUnitModal').modal('hide');
+                    })
             }
         })
 
-        $('#UnitDeleteConfirmBtn').click(function (){
+        $('#UnitDeleteConfirmBtn').click(function() {
             var id = $('#UnitDeleteID').html();
             var img = $('#UnitDeleteImg').html();
 
 
 
             axios.post('/UnitDelete', {
-                id: id,
-                img: img
-            })
+                    id: id,
+                    img: img
+                })
                 .then(function(response) {
 
                     //alert(response.data);
@@ -403,8 +408,5 @@
 
                 });
         })
-
     </script>
-
-
 @endsection

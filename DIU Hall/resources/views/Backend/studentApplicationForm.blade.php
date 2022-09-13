@@ -1,110 +1,116 @@
-
 <div class="stdForm">
-{{--@extends('backend.Layout.app2')--}}
+    {{-- @extends('backend.Layout.app2') --}}
     @extends('Backend.Layout.suppored')
-@section('content')
-
-
-    <div class="container-fluid scroll">
-        <div class="studentApplication">
-            <h3>Please Fill Up This Form</h3>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-12  bg-light p-5">
-                    <form>
-                        <label for="stdId">ID</label>
-                        <input class="w-100 p-2" type="text" id="stdId" name="stdId" placeholder="Enter Your Student ID">
-
-                        <label for="stdName">Name</label>
-                        <input class="w-100 p-2" type="text" id="stdName" name="stdName" placeholder="Enter Your Full Name">
-                        <label  for="stdImg">Photo</label>
-                        <input  class='form-control fileInput' type='file' id='formFile' name="fileInput">
-                        <label for="FName">Father Name</label>
-                        <input class="w-100 p-2" type="text" id="FName" name="FName" placeholder="Enter Your Father Name">
-                        <label for="FContact">Father Contact</label>
-                        <input class="w-100 p-2" type="text" id="FContact" name="FContact" placeholder="Enter Your Father Contact">
-                        <label for="MName">Mother Name</label>
-                        <input class="w-100 p-2" type="text" id="MName" name="MName" placeholder="Enter Your Mother Name">
-                        <label for="MContact">Mother Contact</label>
-                        <input class="w-100 p-2" type="text" id="MContact" name="MContact" placeholder="Enter Your Mother Contact">
-
-
-                        <label for="floor">Floor Name</label>
-                        <select class="w-100 p-2" name="floor" id="floor">
-                            @foreach($floorName as $floorName)
-                                <option id="text" data-id="123">{{$floorName['floor_name']}}</option>
-                            @endforeach
-                        </select>
-
+    @section('content')
+        <div class="container-fluid scroll">
+            <div class="studentApplication">
+                <h3>Please Fill Up This Form</h3>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-12  bg-light p-5">
                         <form>
-                        <label for="unit">Unit Name</label>
+                            <label for="stdId">ID</label>
+                            <input class="w-100 p-2" type="text" id="stdId" name="stdId"
+                                placeholder="Enter Your Student ID">
+
+                            <label for="stdName">Name</label>
+                            <input class="w-100 p-2" type="text" id="stdName" name="stdName"
+                                placeholder="Enter Your Full Name">
+                            <label for="stdImg">Photo</label>
+                            <input class='form-control fileInput' type='file' id='formFile' name="fileInput">
+                            <label for="FName">Father Name</label>
+                            <input class="w-100 p-2" type="text" id="FName" name="FName"
+                                placeholder="Enter Your Father Name">
+                            <label for="FContact">Father Contact</label>
+                            <input class="w-100 p-2" type="text" id="FContact" name="FContact"
+                                placeholder="Enter Your Father Contact">
+                            <label for="MName">Mother Name</label>
+                            <input class="w-100 p-2" type="text" id="MName" name="MName"
+                                placeholder="Enter Your Mother Name">
+                            <label for="MContact">Mother Contact</label>
+                            <input class="w-100 p-2" type="text" id="MContact" name="MContact"
+                                placeholder="Enter Your Mother Contact">
+
+
+                            <label for="floor">Floor Name</label>
+                            <select class="w-100 p-2" name="floor" id="floor">
+                                @foreach ($floorName as $floorName)
+                                    <option id="text" data-id="123">{{ $floorName['floor_name'] }}</option>
+                                @endforeach
+                            </select>
+
+                            <form>
+                                <label for="unit">Unit Name</label>
 
 
 
-                             <select class="unitId w-100 p-2">
+                                <select class="unitId w-100 p-2">
 
-                             </select>
-
-
+                                </select>
 
 
+
+
+                            </form>
+
+                            <label for="stdProfession">Profession</label>
+                            <input class="w-100 p-2" type="text" id="stdProfession" name="stdProfession"
+                                placeholder="Please Enter Your Profession Here">
+                            <label for="stdDes">Student Description</label>
+                            <textarea class="w-100 p-2" id="stdDes" placeholder="Enter Your Sort Description"></textarea>
+                            <label for="stdAge">Student Age</label>
+                            <input class="w-100 p-2" type="text" id="stdAge" name="stdAge"
+                                placeholder="Enter Your Age">
+                            <label for="stdPhone">Student Phone</label>
+                            <input class="w-100 p-2" type="text" id="stdPhone" name="stdPhone"
+                                placeholder="Enter Your Phone Number">
+                            <label for="stdEmail">Student Email</label>
+                            <input class="w-100 p-2" type="text" id="stdEmail" name="stdEmail"
+                                placeholder="Enter Your Email">
+                            <label for="stdUniversity">Student University</label>
+                            <input class="w-100 p-2" type="text" id="stdUniversity" name="stdUniversity"
+                                placeholder="Your University Name">
+                            <label for="stdDob">Student DOB </label>
+                            <input class="w-100 p-2" type="date" id="stdDob" name="stdDob" placeholder="dd-mm-yyyy"
+                                value="" min="1997-01-01" max="2030-12-31">
+
+
+
+                            <label for="permanentDes">Student Permanent Address</label>
+                            <textarea class="w-100 p-2" id="permanentDes" placeholder="Your Permanent Address"></textarea>
+
+                            <label for="presentDes">Student Present Address </label>
+                            <textarea class="w-100 p-2" id="presentDes" placeholder="Your Present Address"></textarea>
+
+
+
+
+
+                            <input style="font-size: 30px" class="btn btn-primary mt-2" id="submitfromAdmin"
+                                type="submit" value="Submit">
                         </form>
-
-                        <label for="stdProfession">Profession</label>
-                        <input class="w-100 p-2" type="text" id="stdProfession" name="stdProfession"
-                               placeholder="Please Enter Your Profession Here">
-                        <label for="stdDes">Student Description</label>
-                        <textarea class="w-100 p-2" id="stdDes" placeholder="Enter Your Sort Description"></textarea>
-                        <label for="stdAge">Student Age</label>
-                        <input class="w-100 p-2" type="text" id="stdAge" name="stdAge" placeholder="Enter Your Age">
-                        <label for="stdPhone">Student Phone</label>
-                        <input  class="w-100 p-2" type="text" id="stdPhone" name="stdPhone" placeholder="Enter Your Phone Number">
-                        <label for="stdEmail">Student Email</label>
-                        <input class="w-100 p-2" type="text" id="stdEmail" name="stdEmail" placeholder="Enter Your Email">
-                        <label for="stdUniversity">Student University</label>
-                        <input class="w-100 p-2" type="text" id="stdUniversity" name="stdUniversity" placeholder="Your University Name">
-                        <label for="stdDob">Student DOB </label>
-                        <input class="w-100 p-2" type="date" id="stdDob" name="stdDob" placeholder="dd-mm-yyyy" value=""
-                               min="1997-01-01" max="2030-12-31">
-
-
-
-                        <label for="permanentDes">Student Permanent Address</label>
-                        <textarea class="w-100 p-2" id="permanentDes" placeholder="Your Permanent Address"></textarea>
-
-                        <label for="presentDes">Student Present Address </label>
-                        <textarea class="w-100 p-2" id="presentDes" placeholder="Your Present Address"></textarea>
-
-
-
-
-
-                        <input style="font-size: 30px" class="btn btn-primary mt-2" id="submitfromAdmin" type="submit" value="Submit">
-                    </form>
+                    </div>
+                    <div class="col-md-2"></div>
                 </div>
-                <div class="col-md-2"></div>
+
+
             </div>
-
-
         </div>
-    </div>
 
-</div>
+    </div>
 @endsection
 
 @section('script')
-
     <script type="text/javascript">
+        $('.text').empty();
 
-         $('.text').empty();
+        $('#floor').change(function() {
 
-         $('#floor').change(function() {
+            let text = $("#floor option:selected").text();
 
-            let text = $( "#floor option:selected" ).text();
-
-            axios.post('/floorToUnit',{
+            axios.post('/floorToUnit', {
                     text: text
-            })
+                })
 
 
                 .then(function(response) {
@@ -112,16 +118,15 @@
 
                         $('.unitId').empty();
 
-                       var dataJSON = null;
+                        var dataJSON = null;
 
-                         dataJSON = response.data;
+                        dataJSON = response.data;
                         $.each(dataJSON, function(i, item) {
 
-                                $('.unitId').append($('<option>',
-                                    {
-                                        value: i,
-                                        text : dataJSON[i].unit_name
-                                    }));
+                            $('.unitId').append($('<option>', {
+                                value: i,
+                                text: dataJSON[i].unit_name
+                            }));
 
                         });
                         //lert(dataJSON)
@@ -135,11 +140,11 @@
                         // }
 
                     } else {
-                      //lert("error")
+                        //lert("error")
                     }
                 }).catch(function(error) {
-                //alert("error");
-            })
+                    //alert("error");
+                })
 
 
         });
@@ -204,18 +209,18 @@
 
 
 
-            axios.post('/submitFromAdmin',MyFormData)
+            axios.post('/submitFromAdmin', MyFormData)
 
 
                 .then(function(response) {
                     if (response.status == 200) {
-                        if(response.data == 1){
-                         alert('Student Data is Successfully Added.')
-                        window.location.href="/studentApplication";
-                        }else{
+                        if (response.data == 1) {
+                            alert('Student Data is Successfully Added.')
+                            window.location.href = "/studentApplication";
+                        } else {
 
                             alert('Student Data is Failed.')
-                           // window.location.href="/studentApplication";
+                            // window.location.href="/studentApplication";
                         }
 
 
@@ -224,11 +229,10 @@
                         //window.location.href="/studentApplication";
                     }
                 }).catch(function(error) {
-                alert('Student Data is Failed.')
-                //window.location.href="/studentApplication";
-            })
+                    alert('Student Data is Failed.')
+                    //window.location.href="/studentApplication";
+                })
 
         })
-
-</script>
+    </script>
 @endsection
