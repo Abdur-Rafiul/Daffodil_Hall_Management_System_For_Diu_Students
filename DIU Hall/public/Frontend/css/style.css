@@ -1,13 +1,13 @@
 /*Admin Pannel Css*/
 
-ul li{
+ul li {
     padding: 10px;
 
     list-style-type: none;
 
 }
 
-ul li a{
+ul li a {
 
     margin-left: 15px;
     font-family: "Times New Roman";
@@ -15,18 +15,19 @@ ul li a{
 
 }
 
-.main{
-    box-sizing: border-box!important;
-    overflow: hidden!important;
-    height: 100%!important;
-    width: 100%!important;
-}
-.scroll{
-    overflow: scroll!important;
-    height: 90%!important;
+.main {
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    height: 100% !important;
+    width: 100% !important;
 }
 
-.menuStyle{
+.scroll {
+    overflow: scroll !important;
+    height: 90% !important;
+}
+
+.menuStyle {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -35,16 +36,16 @@ ul li a{
 
 }
 
-.ContentStyle{
+.ContentStyle {
     position: fixed;
     bottom: 0;
     left: 0;
-    width:400px;
+    width: 400px;
 
 }
 
-.dropdown-item1{
-    margin-right: 10px!important;
+.dropdown-item1 {
+    margin-right: 10px !important;
 }
 
 
@@ -58,11 +59,11 @@ ul li a{
 
 /*Frontend CSS*/
 
-.application-btn{
+.application-btn {
 
-  font-family: "Poppins", sans-serif;
-    font-size: 30px!important;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px !important;
     padding: 10px;
-    color: yellow!important;
+    color: yellow !important;
 
 }

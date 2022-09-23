@@ -1,118 +1,106 @@
-
 <div class="stdForm1">
 
 
-{{--@extends('backend.Layout.app2')--}}
+    {{-- @extends('backend.Layout.app2') --}}
     @extends('Backend.Layout.suppored')
-@section('content')
-
-<div class="container-fluid ">
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 p-2 ">
+    @section('content')
+        <div class="container-fluid ">
 
 
-                <div class="scroll1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 p-2 ">
 
 
-                <table  id="dataTable" class="table table-striped table-bordered display" >
-                    <thead>
-                    <tr>
-
-                        <th class="th-sm">Name</th>
-                        <th class="th-sm">ID</th>
+                        <div class="scroll1">
 
 
-                        <th class="th-sm">Phone</th>
-                        <th class="th-sm">Transaction ID</th>
+                            <table id="dataTable" class="table table-striped table-bordered display">
+                                <thead>
+                                    <tr>
 
-                        <th class="th-sm">Payment</th>
+                                        <th class="th-sm">Name</th>
+                                        <th class="th-sm">ID</th>
 
-                    </tr>
-                    </thead>
 
-                    <tbody class="payment_table">
+                                        <th class="th-sm">Phone</th>
+                                        <th class="th-sm">Transaction ID</th>
 
+                                        <th class="th-sm">Payment</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody class="payment_table">
 
 
 
-                    </tbody>
-                </table>
 
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        @endsection
+
+
+        @section('script')
+            <script type="text/javascript">
+                getStudentDataPaymentClear();
 
 
 
-@endsection
+                //For Student Table
+                function getStudentDataPaymentClear() {
 
 
-@section('script')
-<script type="text/javascript">
+                    axios.get('/getStudentDataPaymentClear')
+                        .then(function(response) {
+                            //alert("Robin");
+
+                            if (response.status == 200) {
+
+                                $('#dataTable').DataTable().destroy();
+
+                                $('.payment_table').empty();
 
 
+                                //alert("R")
+                                var dataJSON = response.data;
+                                //alert(dataJSON)
+                                $.each(dataJSON, function(i, item) {
+                                    $('<tr>').html(
 
 
-
-    getStudentDataPaymentClear();
-
-
-
-    //For Student Table
-    function getStudentDataPaymentClear() {
+                                        "<td>" + dataJSON[i].name + "</td>" +
+                                        "<td>" + dataJSON[i].student_id + "</td>" +
 
 
-        axios.get('/getStudentDataPaymentClear')
-            .then(function(response) {
-                //alert("Robin");
-
-                if (response.status == 200) {
-
-                    $('#dataTable').DataTable().destroy();
-
-                    $('.payment_table').empty();
-
-
-                    //alert("R")
-                    var dataJSON = response.data;
-                    //alert(dataJSON)
-                    $.each(dataJSON, function(i, item) {
-                        $('<tr>').html(
-
-
-                            "<td>" + dataJSON[i].name + "</td>" +
-                            "<td>" + dataJSON[i].student_id + "</td>" +
-
-
-                            "<td>" + dataJSON[i].phone + "</td>" +
-                            "<td>" + dataJSON[i].transaction_id + "</td>" +
-                            "<td>" + dataJSON[i].status + "</td>"
+                                        "<td>" + dataJSON[i].phone + "</td>" +
+                                        "<td>" + dataJSON[i].transaction_id + "</td>" +
+                                        "<td>" + dataJSON[i].status + "</td>"
 
 
 
 
-                        ).appendTo('.payment_table');
-                    });
-                    $('#dataTable').DataTable({"order":false});
-                    $('.dataTables_length').addClass('bs-select');
-                }else{
+                                    ).appendTo('.payment_table');
+                                });
+                                $('#dataTable').DataTable({
+                                    "order": false
+                                });
+                                $('.dataTables_length').addClass('bs-select');
+                            } else {
 
+                            }
+
+                        })
+                        .catch(function(error) {
+
+
+
+                        });
                 }
-
-            })
-            .catch(function(error) {
-
-
-
-            });
-    }
-
-
-</script>
-
-
-@endsection
+            </script>
+        @endsection
